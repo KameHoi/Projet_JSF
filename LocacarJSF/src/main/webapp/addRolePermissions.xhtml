@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:fxs="http://java.sun.com/jsf/composite/composantsFxs"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">#{bundle['fxs.users.RolesPermissions']}</ui:define>
+    <ui:define name="content">
+
+        <h:head>
+            <title>Utilisateurs</title>
+            <f:metadata>
+                <f:event listener="#{accessControlBean.checkPermission}" type="preRenderView"/>
+                <f:attribute name="permRequired" value="read_roles"/>
+                <f:event type="preRenderView" listener="#{rolesPermissionsBean.init}"/>
+            </f:metadata>
+            <script>
+                $( document ).ready( function () {
+                    $( '.datatableRolePerm' ).DataTable( {
+                        retrieve: true,
+
+                        orderFixed: [0, 'asc'],
+                        rowGroup: {
+                            dataSrc: 0
+                        }
+                    } );
+                } );
+            </script>
+        </h:head>
+
+        <h:body>
+            <div class="account-title">
+                <h1>#{bundle['account.title']}</h1>
+            </div>
+            <div class="row">
+                <fxs:menu/>
+                <div class="col-md-offset-2 col-md-9 myarea-content">
+                    <div class="myarea-content-title">
+                        <h2>#{bundle['fxs.users.RolesPermissions']}</h2>
+                    </div>
+                    <div class="myarea-content-display table-responsive">
+                        <fxs:rolePermissions id="displayUsersList"></fxs:rolePermissions>
+                    </div>
+                </div>
+            </div>
+            <fxs:modalRolePermEdit id="modalRolePermEdit"/>
+
+        </h:body>
+
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LocacarJSF:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d4b7ad0-20f3-4110-809a-8c82c0462641" name="Default Changelist" comment="US-83 Ajouter au panier et valider un contrat leasing terminé. + Ajout de css !!">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itextpdf_5_5_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/PDFUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/uploads/generated_files/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LocacarJSF_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LocacarJSF_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace-DESKTOP-U6VC256-2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace-DESKTOP-U6VC256-3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace-DESKTOP-U6VC256-4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace-DESKTOP-U6VC256-5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace-DESKTOP-U6VC256-6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocacarJSF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LocacarJSF.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/beans/OrdersBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/beans/OrdersBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/dao/entities/UsersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/dao/entities/UsersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/myOrders.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/myOrders.xhtml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Younes Arifi &lt;younesarifi@hotmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1p5A1plkVgZobb2Cdgf78TGoNU6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kameh\OneDrive\Documents\Cours\Bac Info\3e\Projet d'integration de dev\Projet\JAVA\LocacarJSF\src\main\webapp" />
+      <recent name="C:\Users\kameh\OneDrive\Documents\Cours\Bac Info\3e\Projet d'integration de dev\Projet\JAVA\LocacarJSF\src\main\webapp\resources\composantsFxs" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="be.atc.LocacarJSF.services" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.atc.LocacarJSF.validators" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="insuran" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.41">
+    <configuration name="ContractsServicesImplTest.findContractByIdCarAndTypeIsLeasing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LocacarJSF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.atc.LocacarJSF.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.atc.LocacarJSF.services" />
+      <option name="MAIN_CLASS_NAME" value="be.atc.LocacarJSF.services.ContractsServicesImplTest" />
+      <option name="METHOD_NAME" value="findContractByIdCarAndTypeIsLeasing" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContractsServicesImplTest.findContractById_ShouldReturnFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LocacarJSF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.atc.LocacarJSF.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.atc.LocacarJSF.services" />
+      <option name="MAIN_CLASS_NAME" value="be.atc.LocacarJSF.services.ContractsServicesImplTest" />
+      <option name="METHOD_NAME" value="findContractById_ShouldReturnFalse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContractsServicesImplTest.findContractById_ShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LocacarJSF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.atc.LocacarJSF.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.atc.LocacarJSF.services" />
+      <option name="MAIN_CLASS_NAME" value="be.atc.LocacarJSF.services.ContractsServicesImplTest" />
+      <option name="METHOD_NAME" value="findContractById_ShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContractsServicesImplTest.findContractsInAllOrdersForLeasingDeadline" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LocacarJSF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.atc.LocacarJSF.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.atc.LocacarJSF.services" />
+      <option name="MAIN_CLASS_NAME" value="be.atc.LocacarJSF.services.ContractsServicesImplTest" />
+      <option name="METHOD_NAME" value="findContractsInAllOrdersForLeasingDeadline" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContractsServicesImplTest.putChoiceEndLeasingFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LocacarJSF" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.atc.LocacarJSF.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.atc.LocacarJSF.services" />
+      <option name="MAIN_CLASS_NAME" value="be.atc.LocacarJSF.services.ContractsServicesImplTest" />
+      <option name="METHOD_NAME" value="putChoiceEndLeasingFalse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.41" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.41" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/LocacarJSF_war_exploded/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="LocacarJSF:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/LocacarJSF_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_LocacarJSF" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62973" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LocacarJSF:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ContractsServicesImplTest.findContractByIdCarAndTypeIsLeasing" />
+        <item itemvalue="JUnit.ContractsServicesImplTest.findContractById_ShouldReturnFalse" />
+        <item itemvalue="JUnit.ContractsServicesImplTest.findContractById_ShouldReturnTrue" />
+        <item itemvalue="JUnit.ContractsServicesImplTest.putChoiceEndLeasingFalse" />
+        <item itemvalue="JUnit.ContractsServicesImplTest.findContractsInAllOrdersForLeasingDeadline" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d4b7ad0-20f3-4110-809a-8c82c0462641" name="Default Changelist" comment="" />
+      <created>1614462365823</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614462365823</updated>
+      <workItem from="1614462366838" duration="593000" />
+      <workItem from="1614538918887" duration="7585000" />
+      <workItem from="1614597548561" duration="15701000" />
+      <workItem from="1614687011656" duration="6553000" />
+      <workItem from="1614776706538" duration="812000" />
+      <workItem from="1614793450112" duration="4563000" />
+      <workItem from="1614801354379" duration="4825000" />
+      <workItem from="1614846807995" duration="14415000" />
+      <workItem from="1614884356307" duration="1168000" />
+      <workItem from="1614932344442" duration="5010000" />
+      <workItem from="1614963160819" duration="115000" />
+      <workItem from="1615044570486" duration="1217000" />
+      <workItem from="1615118041014" duration="4034000" />
+      <workItem from="1615223172864" duration="2000" />
+    </task>
+    <task id="LOCAL-00001" summary="US-76 List of my orders !">
+      <created>1614550367314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614550367314</updated>
+    </task>
+    <task id="LOCAL-00002" summary="US-77 Reglages des messages succès + fail. + ajout sécurité assurance à la validation du panier">
+      <created>1614610414682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614610414682</updated>
+    </task>
+    <task id="LOCAL-00003" summary="US-83. Ajout d'une notification de fin de leasing pour un rachat de véhicule dans MyOrders. + Possibilité d'annuler le contrat !">
+      <created>1614847211408</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614847211408</updated>
+    </task>
+    <task id="LOCAL-00004" summary="US-81. Ajout d'une notification de fin de leasing pour un rachat de véhicule dans MyOrders. + Possibilité d'annuler le contrat !">
+      <created>1614847319695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614847319695</updated>
+    </task>
+    <task id="LOCAL-00005" summary="US-83 Ajouter au panier et valider un contrat leasing terminé. + Ajout de css !!">
+      <created>1614879948731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614879948731</updated>
+    </task>
+    <task id="LOCAL-00006" summary="US-84 Envoie de mail">
+      <created>1614936751121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614936751121</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="US-76 List of my orders !" />
+    <MESSAGE value="US-77 Reglages des messages succès + fail. + ajout sécurité assurance à la validation du panier" />
+    <MESSAGE value="US-83. Ajout d'une notification de fin de leasing pour un rachat de véhicule dans MyOrders. + Possibilité d'annuler le contrat !" />
+    <MESSAGE value="US-81. Ajout d'une notification de fin de leasing pour un rachat de véhicule dans MyOrders. + Possibilité d'annuler le contrat !" />
+    <MESSAGE value="US-83 Ajouter au panier et valider un contrat leasing terminé. + Ajout de css !!" />
+    <MESSAGE value="US-84 Envoie de mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="US-84 Envoie de mail" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/beans/ContractsBean.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/beans/OrdersBean.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/JavaMailUtil.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/PDFUtil.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/atc/LocacarJSF/classes/PDFUtil.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

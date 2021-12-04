@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:fxs="http://java.sun.com/jsf/composite/composantsFxs"
+                template="WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">#{bundle['disabledAds.title']}</ui:define>
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:event listener="#{accessControlBean.checkPermission}" type="preRenderView"/>
+            <f:attribute name="permRequired" value="update_ads"/>
+            <f:viewAction action="#{adsBean.displayDisabeldAdsByUser}"/>
+        </f:metadata>
+
+
+        <h:head>
+            <title>#{bundle['account.title']}</title>
+            <script>
+                $( document ).ready( function () {
+                    $( '.account-a' ).click(
+                        function ( event ) {
+                            $( '.account-a' ).removeClass( 'account-a-active' );
+                            $( this ).addClass( 'account-a-active' );
+                            event.preventDefault();
+                        }
+                    );
+                } );
+
+                $( document ).ready( function () {
+
+                        $( '.account-list' ).dataTable().fnDestroy();
+                        loadTable();
+
+                        function loadTable() {
+                            $( '.account-list' ).DataTable( {
+                                'language': {
+                                    'url': '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json'
+                                }
+                            } );
+                        }
+                    }
+                );
+            </script>
+        </h:head>
+
+        <h:body>
+            <div class="account-title">
+                <h1>#{bundle['account.title']}</h1>
+            </div>
+            <div class="row">
+                <fxs:menu/>
+                <div class="col-md-offset-2 col-md-9 myarea-content">
+                    <div class="myarea-content-title">
+                        <h2 class="myarea-content-h3">#{bundle['disabledAds.title']}</h2>
+                    </div>
+                    <div class="myarea-content-display table-responsive">
+                        <fxs:disabledAdsList/>
+                    </div>
+                </div>
+            </div>
+
+        </h:body>
+
+    </ui:define>
+</ui:composition>

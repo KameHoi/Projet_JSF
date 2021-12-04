@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+
+<cc:interface name="menuLeft"
+              displayName="#{bundle['menu.displayName']}"
+              shortDescription="#{bundle['menu.displayName']}">
+</cc:interface>
+<cc:implementation>
+    <aside class="col-md-3 pl-0">
+        <nav class="nav flex-column">
+            <h:form styleClass="test-form">
+                <h:panelGroup rendered="#{usersBean.connected}">
+                    <h:commandLink class="nav-link account-a"
+                                   action="userUpdateByUsers?faces-redirect=true"
+                                   value="#{bundle['account.parameter']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.updateAds}"
+                                   class="nav-link account-a"
+                                   action="account?faces-redirect=true" value="#{bundle['account.ads']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.updateAds}"
+                                   class="nav-link account-a"
+                                   action="disabledads?faces-redirect=true" value="#{bundle['account.deactivate']}"/>
+                    <h:commandLink class="nav-link account-a"
+                                   action="myOrders?faces-redirect=true" value="#{bundle['account.myOrders']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.createAds}"
+                                   class="nav-link account-a"
+                                   action="accountsellcar?faces-redirect=true" value="#{bundle['account.sell']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readOrders}"
+                                   class="nav-link account-a"
+                                   action="orders?faces-redirect=true" value="#{bundle['account.orders']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readInsurances}"
+                                   class="nav-link account-a"
+                                   action="insurances?faces-redirect=true" value="#{bundle['account.insurances']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readOptions}"
+                                   class="nav-link account-a"
+                                   action="options?faces-redirect=true" value="#{bundle['account.option']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readColors}"
+                                   class="nav-link account-a"
+                                   action="colors?faces-redirect=true" value="#{bundle['account.color']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readModels}"
+                                   class="nav-link account-a"
+                                   action="models?faces-redirect=true" value="#{bundle['account.model']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readUsers}"
+                                   class="nav-link account-a"
+                                   action="users?faces-redirect=true" value="#{bundle['account.users']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readRoles}"
+                                   class="nav-link account-a"
+                                   action="roles?faces-redirect=true" value="#{bundle['account.addRole']}"/>
+                    <h:commandLink rendered="#{rolesPermissionsBean.readRoles}"
+                                   class="nav-link account-a"
+                                   action="addRolePermissions?faces-redirect=true"
+                                   value="#{bundle['account.addRolePermissions']}"/>
+                </h:panelGroup>
+            </h:form>
+        </nav>
+    </aside>
+</cc:implementation>
+</html>

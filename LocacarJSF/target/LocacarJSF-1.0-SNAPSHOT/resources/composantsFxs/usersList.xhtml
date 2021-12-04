@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+>
+
+<cc:interface name="usersList"
+              displayName="#{bundle['fxs.usersList.displayName']}"
+              shortDescription="#{bundle['fxs.usersList.shortDescription']}"
+>
+</cc:interface>
+<cc:implementation>
+    <div>
+        <h:form>
+            <h:commandLink styleClass="btn btn-success"
+                           value="#{bundle['fxs.optionsList.add']}"
+                           action="#{usersBean.showPopupModalAdd}" rendered="#{rolesPermissionsBean.createUsers}">
+                <f:param name="addUserEntity" value="addUserEntity"></f:param>
+                <f:ajax render="@all"/>
+                <i class="fas fa-plus"></i>
+            </h:commandLink>
+        </h:form>
+    </div>
+
+    <h:form>
+        <h:dataTable id="outputMessage" styleClass="dataUser table table-hover"
+                     value="#{usersBean.usersEntities}" var="user">
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.user.username']}</f:facet>
+                <h:outputText value="#{user.username}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.user.mail']}</f:facet>
+                <h:outputText value="#{user.email}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.user.active']}</f:facet>
+                <h:outputText value="#{user.active}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.user.role']}</f:facet>
+                <h:outputText value="#{user.rolesByIdRoles.label}"></h:outputText>
+            </h:column>
+
+
+            <h:column rendered="#{rolesPermissionsBean.updateUsers}">
+                <!-- bouton edit -->
+                <f:facet name="header">#{bundle['fxs.users.edit']}</f:facet>
+                <!-- appel de showmodalPopup -->
+                <h:commandLink styleClass="btn btn-outline-primary btn-sm"
+                               action="#{usersBean.showPopupModal}">
+                    <f:param name="id" value="#{user.id}"></f:param>
+                    <f:ajax render="@all"/>
+                    <i class="fas fa-edit"></i>
+                </h:commandLink>
+            </h:column>
+
+
+            <h:column rendered="#{rolesPermissionsBean.deleteUsers}">
+                <h:panelGroup rendered="#{user.active}">
+                    <h:commandButton styleClass="btn btn-outline-success btn-sm"
+                                     value="#{bundle['fxs.insurancesList.delete']}" onclick="return confirmer();"
+                                     action="#{usersBean.deleteUser}">
+                        <f:param name="id" value="#{user.id}"></f:param>
+                        <f:ajax execute="formPopupEdit" render="@all"></f:ajax>
+                    </h:commandButton>
+                </h:panelGroup>
+
+
+                <h:panelGroup rendered="#{not user.active}">
+                    <h:commandButton styleClass="btn btn-outline-success btn-sm"
+                                     value="#{bundle['fxs.user.activeUser']}" onclick="return enabledConfirm();"
+                                     action="#{usersBean.activeUser}">
+                        <f:param name="id" value="#{user.id}"></f:param>
+                        <f:ajax execute="formPopupEdit" render="@all"></f:ajax>
+                    </h:commandButton>
+                </h:panelGroup>
+            </h:column>
+
+
+        </h:dataTable>
+    </h:form>
+
+
+    <!-- affichage du modal -->
+    <f:view>
+        <h:panelGroup id="popupEdit" layout="block" styleClass="popup-panel-overlay"
+                      rendered="#{usersBean.showPopup}">
+
+            <h:form id="formPopupEdit">
+                <h:outputText value="#{usersBean.success}"
+                              style="color: green; font-weight: bold"></h:outputText>
+                <h:outputText value="#{usersBean.fail}"
+                              style="color: darkred; font-weight: bold"></h:outputText>
+                <div class="popup-panel">
+
+                    <div class="form-group">
+                        <h:outputLabel value="ID" for="idUsers"></h:outputLabel>
+                        <h:outputText id="idUsers" value="#{usersBean.usersEntity.id}"
+                                      styleClass="form-control"></h:outputText>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel value="username" for="userName"></h:outputLabel>
+                        <h:inputText value="#{usersBean.usersEntity.username}" styleClass="form-control"
+                                     required="true"
+                                     pt:placeholder="Votre user ici..."
+                                     requiredMessage="#{bundle['fxs.insurancesList.required']}"
+                                     id="userName">
+                        </h:inputText>
+                        <h:message styleClass="alert alert-danger" role="alert" for="userName"></h:message>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel value="mail" for="mail"></h:outputLabel>
+                        <h:inputText value="#{usersBean.usersEntity.email}" styleClass="form-control"
+                                     required="true"
+                                     pt:placeholder="Votre user ici et la..."
+                                     requiredMessage="#{bundle['fxs.insurancesList.required']}"
+                                     id="mail">
+                        </h:inputText>
+                        <h:message styleClass="alert alert-danger" role="alert" for="mail"></h:message>
+                    </div>
+
+
+                    <!-- <div class="form-group">
+                         <h:outputLabel value="idRole" for="idRole"></h:outputLabel>
+                         <h:inputText value="#{usersBean.usersEntity.rolesByIdRoles.label}" styleClass="form-control"
+                                      required="true"
+                                      pt:placeholder="Votre role..."
+                                      requiredMessage="#{bundle['fxs.insurancesList.required']}"
+                                      id="idRole">
+                         </h:inputText>
+                         <h:message styleClass="alert alert-danger" role="alert" for="idRole"></h:message>
+                     </div>
+ -->
+                    <h:panelGroup styleClass="form-group">
+
+                        <h:selectOneMenu id="rolesDisplay" styleClass="form-group"
+                                         value="#{usersBean.usersEntity.rolesByIdRoles.id}">
+                            <f:selectItem itemValue="#{null}" itemLabel=" "/>
+                            <f:selectItems value="#{rolesBean.rolesEntitiesSelectItems}"/>
+                        </h:selectOneMenu>
+                        <h:message for="rolesDisplay"/>
+                    </h:panelGroup>
+
+
+                    <span>
+                        <h:commandButton styleClass="btn btn-outline-success btn-sm"
+                                         value="#{bundle['fxs.insurancesList.save']}"
+                                         action="#{usersBean.updateUserByAdmin}">
+                            <f:ajax execute="formPopupEdit" render="@all"></f:ajax>
+                        </h:commandButton>
+
+                    </span>
+
+
+                    <span>
+                        <h:commandButton styleClass="btn btn-outline-dark btn-sm"
+                                         value="#{bundle['fxs.insurancesList.close']}"
+                                         action="#{usersBean.hidePopupModal}">
+                            <f:ajax render="@all"></f:ajax>
+                        </h:commandButton>
+                    </span>
+                </div>
+            </h:form>
+        </h:panelGroup>
+    </f:view>
+
+
+    <!-- affichage du modal ajout d'user -->
+    <f:view>
+        <h:panelGroup id="popupAdd" layout="block" styleClass="popup-panel-overlay"
+                      rendered="#{usersBean.showPopupAdd}">
+            <h:form id="formPopupAdd">
+                <div class="popup-panel">
+                    <h:outputLabel value="#{bundle['fxs.register.pageTitle']}"></h:outputLabel>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.firstName']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.firstname}" styleClass="form-control "
+                                 required="true"></h:inputText>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.lastName']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.lastname}" styleClass="form-control "
+                                 required="true"></h:inputText>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.username']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.username}" styleClass="form-control "
+                                 required="true"></h:inputText>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.password']}"></h:outputText>
+                    <h:inputSecret value="#{usersBean.usersEntity.password}" styleClass="form-control " required="true">
+                        <f:validateRegex
+                                pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"></f:validateRegex></h:inputSecret>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.email']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.email}" styleClass="form-control " required="true">
+                        <f:validateRegex
+                                pattern="[a-zA-Z0-9].+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+"></f:validateRegex></h:inputText>
+                    <br/>
+
+                    <h:outputText value="#{bundle['fxs.user.birthdate']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.birthdate}" styleClass="form-control " required="true"
+                                 converter="localDateTimeConverter">>
+                        <!--<f:convertDateTime pattern="yyyy-mm-dd"/> -->
+                    </h:inputText>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.user.VATNumber']}"></h:outputText>
+                    <h:inputText value="#{usersBean.usersEntity.vatNumber}" styleClass="form-control "></h:inputText>
+                    <br/>
+
+                    <h:outputText value="#{bundle['fxs.user.street']}"></h:outputText>
+                    <h:inputText value="#{addressesBean.addressesEntity.street}" styleClass="form-control"
+                                 required="true"></h:inputText>
+                    <br/>
+
+                    <h:outputText value="#{bundle['fxs.user.number']}"></h:outputText>
+                    <h:inputText value="#{addressesBean.addressesEntity.number}" styleClass="form-control "
+                                 required="true"></h:inputText>
+                    <br/>
+
+                    <h:outputText value="#{bundle['fxs.user.box']}"></h:outputText>
+                    <h:inputText value="#{addressesBean.addressesEntity.box}" styleClass="form-control"></h:inputText>
+                    <br/>
+                    <h:inputHidden value="admin" id="admin" class="admin"></h:inputHidden>
+
+
+                    <h:outputText value="#{bundle['fxs.user.cities']}"></h:outputText>
+                    <h:panelGroup styleClass="form-group">
+                        <h:selectOneMenu id="citiesDisplay" styleClass="form-group"
+                                         value="#{citiesBean.citiesEntity.id}">
+                            <f:selectItem itemValue="#{null}" itemLabel=" "/>
+                            <f:selectItems value="#{citiesBean.citiesEntitiesSelectItems}"/>
+                        </h:selectOneMenu>
+                        <h:message for="citiesDisplay"/>
+                    </h:panelGroup>
+                    <br/>
+
+                    <h:outputText value="#{bundle['fxs.user.role']}"></h:outputText>
+                    <h:panelGroup styleClass="form-group">
+                        <h:selectOneMenu id="roleDisplay" styleClass="form-group"
+                                         value="#{rolesBean.rolesEntity.id}">
+                            <f:selectItem itemValue="#{null}" itemLabel=" "/>
+                            <f:selectItems value="#{rolesBean.rolesEntitiesSelectItems}"/>
+                        </h:selectOneMenu>
+                        <h:message for="roleDisplay"/>
+                    </h:panelGroup>
+                    <br/>
+                    <span>
+                        <h:commandButton styleClass="btn btn-outline-success btn-sm"
+                                         value="#{bundle['fxs.insurancesList.save']}"
+                                         action="#{usersBean.addUser}">
+                            <f:ajax execute="formPopupAdd" render="@all"></f:ajax>
+                        </h:commandButton>
+
+                    </span>
+
+                    <span>
+                        <h:commandButton styleClass="btn btn-outline-dark btn-sm"
+                                         value="#{bundle['fxs.insurancesList.close']}"
+                                         action="#{usersBean.hidePopupModal}">
+                            <f:ajax render="@all"></f:ajax>
+                        </h:commandButton>
+                    </span>
+                </div>
+            </h:form>
+        </h:panelGroup>
+    </f:view>
+
+
+</cc:implementation>
+</html>

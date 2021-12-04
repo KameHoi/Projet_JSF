@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:fxs="http://java.sun.com/jsf/composite/composantsFxs"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">#{bundle['fxs.users.title']}</ui:define>
+    <ui:define name="content">
+
+        <h:head>
+            <title>#{bundle['account.title']}</title>
+            <f:metadata>
+                <f:event type="preRenderView" listener="#{usersBean.init}"/>
+            </f:metadata>
+        </h:head>
+
+        <h:body>
+            <div class="account-title">
+                <h1>#{bundle['account.title']}</h1>
+            </div>
+            <h:panelGroup rendered="#{usersBean.connected}">
+                <fxs:userUpdateByUsers id="displayUsersList"></fxs:userUpdateByUsers>
+            </h:panelGroup>
+            <fxs:modalUserByUsersEdit id="modalUserByUsersEdit"/>
+
+
+        </h:body>
+
+    </ui:define>
+</ui:composition>

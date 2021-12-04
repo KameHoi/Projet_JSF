@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:fxs="http://java.sun.com/jsf/composite/composantsFxs"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">#{bundle['updateAds.title']}</ui:define>
+    <ui:define name="content">
+
+        <h:head>
+            <script>
+                $( function () {
+                    $( '.ry' ).datepicker( $.datepicker.regional[ 'fr' ] );
+                } );
+            </script>
+        </h:head>
+
+        <f:metadata>
+            <f:viewAction action="#{adsBean.displayOneAd}"/>
+            <f:viewAction action="#{adsBean.getAllCarOptions}"/>
+            <f:viewAction action="#{modelsBean.findModelsByBrandsID}"/>
+            <f:event listener="#{accessControlBean.checkPermission}" type="preRenderView"/>
+            <f:attribute name="permRequired" value="update_ads"/>
+        </f:metadata>
+
+        <h:body>
+            <div class="return-div">
+
+                <h:link outcome="account"> <i class="fas fa-chevron-left"></i> #{bundle['adsdetails.return']}
+                </h:link>
+            </div>
+            <h1>#{bundle['updateAds.title']}</h1>
+            <div id="displayAdsForm">
+                <fxs:updateAds/>
+            </div>
+        </h:body>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+
+<cc:interface name="basket"
+              displayName="#{bundle['fxs.addShopButton.displayName']}"
+              shortDescription="#{bundle['fxs.addShopButton.shortDescription']}"
+>
+</cc:interface>
+<cc:implementation>
+    <f:view>
+        <h:panelGroup id="popupEdit" layout="block" styleClass="popup-panel-overlay"
+                      rendered="#{contractInsurancesBean.showPopup}">
+
+            <h:form id="formPopupEdit">
+                <div class="popup-panel pre-scrollable w-50">
+                    <h:commandLink styleClass="close text-info"
+                                   action="#{contractInsurancesBean.hidePopupModal}">
+                        <i class="fas fa-times"></i>
+                        <f:ajax render="@all"/>
+                    </h:commandLink>
+                    <h:panelGrid>
+                        <h:messages id="messages" showSummary="true" globalOnly="true" infoClass="alert-success"
+                                    errorClass="alert-danger"/>
+                    </h:panelGrid>
+                    <h:outputText styleClass="container-fluid badge bg-warning"
+                                  value="#{bundle['fxs.basket.insuranceActual']}"/>
+                    <h:outputText styleClass="font-weight-bold"
+                                  value="#{contractInsurancesBean.contractInsurancesEntity.insurancesByIdInsurance.label}"/>
+                    <br/><br/>
+                    <h:outputText styleClass="font-weight-bold" value="#{bundle['fxs.basket.editing']}"/>
+                    <br/>
+                    <h:outputLabel value="#{bundle['fxs.basket.choiceInsurance']}"/>
+                    <h:selectOneMenu id="insuranceId" styleClass="form-check"
+                                     value="#{insurancesBean.insurancesEntity}"
+                                     converter="contractInsurancesConverter">
+                        <f:ajax render="@all"/>
+                        <f:selectItems value="#{insurancesBean.insurancesEntitiesActive}" var="insurance"
+                                       itemValue="#{insurance}"
+                                       itemLabel="#{insurance.label}"/>
+                        <h:message styleClass="alert-danger" for="insuranceId"/>
+                    </h:selectOneMenu>
+                    <br/>
+                    <h:outputText value="#{bundle['fxs.ordersList.insurancePrice']} "/>
+                    <h:outputText styleClass="font-weight-bold" value="#{insurancesBean.insurancesEntity.price}">
+                        <f:convertNumber type="currency" currencySymbol="€"/>
+                    </h:outputText>
+                    <h:outputText styleClass="font-weight-bold" value="#{bundle['pdf.insuranceMonth']} "/>
+                    <br/>
+                    <br/>
+                    <h:outputLabel value="#{bundle['fxs.basket.leasingTime']}&nbsp;"/>
+                    <h:selectOneMenu styleClass="form-check" value="#{contractsBean.timeLeasing}" id="leasingTime"
+                                     required="true"
+                                     validator="leasingTimeValidator">
+                        <f:selectItem itemValue="36" itemLabel="#{bundle['fxs.basket.36Month']}"/>
+                        <f:selectItem itemValue="48" itemLabel="#{bundle['fxs.basket.48Month']}"/>
+                        <f:selectItem itemValue="60" itemLabel="#{bundle['fxs.basket.60Month']}"/>
+                        <h:message styleClass="alert-danger" for="leasingTime"/>
+                    </h:selectOneMenu>
+                    <br/>
+                    <h:commandButton styleClass="btn btn-outline-success btn-sm"
+                                     action="#{contractInsurancesBean.saveEdit}"
+                                     value="#{bundle['save']}">
+                        <f:ajax execute="formPopupEdit" render="@all"/>
+                    </h:commandButton>
+                </div>
+            </h:form>
+        </h:panelGroup>
+    </f:view>
+</cc:implementation>
+</html>

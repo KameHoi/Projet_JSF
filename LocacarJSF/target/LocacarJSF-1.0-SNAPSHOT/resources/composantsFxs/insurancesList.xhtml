@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+
+<cc:interface name="insurancesList"
+              displayName="#{bundle['fxs.insurancesList.displayName']}"
+              shortDescription="#{bundle['fxs.insurancesList.shortDescription']}"
+>
+</cc:interface>
+<cc:implementation>
+
+    <h:panelGroup rendered="#{rolesPermissionsBean.addInsurances}">
+        <div class="mt-2">
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-primary" value="#{bundle['fxs.insurancesList.add']}"
+                                 action="#{insurancesBean.showPopupModal}">
+                    <f:param name="addEntity" value="addEntity"/>
+                </h:commandButton>
+            </h:form>
+        </div>
+    </h:panelGroup>
+    <h:form styleClass="mt-3">
+        <h:panelGrid>
+            <h:messages id="messages" showSummary="true" globalOnly="true" infoClass="alert-success"
+                        errorClass="alert-danger"/>
+        </h:panelGrid>
+        <h:dataTable id="outputMessage" styleClass="table table-hover table-responsive"
+                     value="#{insurancesBean.insurancesEntities}" var="i">
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.insurancesList.title']}</f:facet>
+                <h:outputText value="#{i.label}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.insurancesList.description']}</f:facet>
+                <h:outputText value="#{i.description}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.insurancesList.price']}</f:facet>
+                <h:outputText value="#{i.price}">
+                    <f:convertNumber type="currency" currencySymbol="€"/>
+                </h:outputText>
+            </h:column>
+            <h:column rendered="#{rolesPermissionsBean.deleteInsurances}">
+                <f:facet name="header">#{bundle['fxs.insurancesList.edit']}</f:facet>
+                <h:commandLink styleClass="text-info" action="#{insurancesBean.showPopupModal}">
+                    <i class="far fa-edit"></i>
+                    <f:param name="id" value="#{i.id}"/>
+                    <f:ajax render="@all"/>
+                </h:commandLink>
+            </h:column>
+
+            <h:column rendered="#{rolesPermissionsBean.deleteInsurances}">
+                <f:facet name="header">#{bundle['fxs.insurancesList.isActive']}</f:facet>
+                <h:commandLink id="activeInsurance" styleClass="text-primary"
+                               action="#{insurancesBean.deleteOrActivateInsurance}"
+                               rendered="#{i.active eq true}"
+                               onclick="return confirmer();">
+                    <i class="fas fa-toggle-on"></i>
+                    <f:param name="id" value="#{i.id}"/>
+                    <f:ajax render="@form"/>
+                </h:commandLink>
+                <h:commandLink id="desactiveInsurance" styleClass="text-secondary"
+                               action="#{insurancesBean.deleteOrActivateInsurance}"
+                               rendered="#{i.active eq false}">
+                    <i class="fas fa-toggle-off"></i>
+                    <f:param name="id" value="#{i.id}"/>
+                    <f:ajax render="@form"/>
+                </h:commandLink>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</cc:implementation>
+</html>

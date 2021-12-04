@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+>
+
+<cc:interface name="rolePermissions"
+              displayName="#{bundle['fxs.rolesList.displayName']}"
+              shortDescription="#{bundle['fxs.rolesList.shortDescription']}"
+>
+</cc:interface>
+<cc:implementation>
+
+    <!-- LIST -->
+    <h:form>
+        <h:column rendered="#{rolesPermissionsBean.addRoles}">
+            <h:commandLink styleClass="btn btn-success"
+                           value="#{bundle['fxs.optionsList.add']}"
+                           action="#{rolesPermissionsBean.showPopupModalAdd}">
+                <f:param name="addRolesPermissionsEntity" value="addRolesPermissionsEntity"></f:param>
+                <f:ajax render="@all"/>
+                <i class="fas fa-plus"></i>
+            </h:commandLink>
+        </h:column>
+    </h:form>
+
+    <h:form>
+        <h:outputText value="#{rolesPermissionsBean.success}"
+                      style="color: green; font-weight: bold"></h:outputText>
+        <h:outputText value="#{rolesPermissionsBean.fail}"
+                      style="color: darkred; font-weight: bold"></h:outputText>
+        <h:panelGrid>
+            <h:messages id="message" showSummary="true" globalOnly="true" infoClass="alert-success"
+                        errorClass="alert-danger"/>
+        </h:panelGrid>
+
+        <h:dataTable id="example" styleClass="datatableRolePerm table table-hover"
+                     value="#{rolesPermissionsBean.rolesPermissionsEntities}" var="roleP">
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.rolePerm.idRole']}</f:facet>
+                <h:outputText value="#{roleP.rolesByIdRoles.label}"></h:outputText>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">#{bundle['fxs.rolePerm.idPerm']}</f:facet>
+                <h:outputText value="#{roleP.permissionsByIdPermissions.label}"></h:outputText>
+            </h:column>
+
+            <!-- bouton update -->
+
+            <h:column rendered="#{rolesPermissionsBean.updateRoles}">
+
+                <f:facet name="header">#{bundle['fxs.user.editUser']}</f:facet>
+                <h:commandLink styleClass="btn btn-success"
+                               value="#{bundle['fxs.user.editUser']}"
+                               action="#{rolesPermissionsBean.showPopupModalEdit}">
+                    <f:param name="id" value="#{roleP.id}"></f:param>
+                    <f:ajax render="@all"/>
+                    <i class="fas fa-edit"></i>
+                </h:commandLink>
+
+            </h:column>
+
+
+            <h:column rendered="#{rolesPermissionsBean.deleteRoles}">
+                <!-- bouton delete -->
+                <f:facet name="header">#{bundle['fxs.user.delete']}</f:facet>
+                <!-- appel de showmodalPopup -->
+                <h:commandLink styleClass="btn btn-outline-primary btn-sm"
+                               value="#{bundle['fxs.user.delete']}" onclick="return confirmer();"
+                               action="#{rolesPermissionsBean.delete}">
+                    <f:param name="id" value="#{roleP.id}"></f:param>
+
+                    <i class="fas fa-trash-alt"></i>
+                </h:commandLink>
+            </h:column>
+
+        </h:dataTable>
+    </h:form>
+
+
+</cc:implementation>
+</html>

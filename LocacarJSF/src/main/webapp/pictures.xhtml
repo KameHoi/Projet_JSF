@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">Ajout image test</ui:define>
+    <ui:define name="content">
+
+        <h:head>
+            <title>Test ajout image</title>
+        </h:head>
+        <h:body>
+            <h:form enctype="multipart/form-data">
+                <h:inputFile value="#{picturesBean.file}" id="picturesInput" required="true"
+                             requiredMessage="Ajouter une image">
+                    <f:validator validatorId="carsPicturesValidator"/>
+                </h:inputFile>
+                <h:message for="picturesInput" id="picturesInputMessages" styleClass="alert alert-danger"/>
+                <h:commandButton action="#{picturesBean.save}" value="ajouter"/>
+            </h:form>
+
+            <h:dataTable value="#{picturesBean.carsPicturesEntityList}" var="pictures"
+                         styleClass="table table-hover table-responsive">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:outputText value="#{pictures.id}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">image</f:facet>
+                    <h:graphicImage url="A:\Applications\Drive\Work\IntelliJ\uploads/images/#{pictures.label}"
+                                    width="500" height="500"/>
+                </h:column>
+            </h:dataTable>
+
+        </h:body>
+    </ui:define>
+</ui:composition>
